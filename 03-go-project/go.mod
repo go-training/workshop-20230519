@@ -1,5 +1,5 @@
 module example01
 
-go 1.18
+go 1.20
 
-require github.com/appleboy/com v0.1.6
+require github.com/appleboy/com v0.1.7
