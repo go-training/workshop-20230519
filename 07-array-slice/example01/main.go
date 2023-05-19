@@ -15,9 +15,9 @@ func main() {
 }
 
 func foo01() {
-	var foo [3]int
-	var bar []int
-	test := []int{}
+	var foo [3]int  // array
+	var bar []int   // slice
+	test := []int{} // slice
 
 	if bar == nil {
 		fmt.Printf("%v\n", foo)
@@ -29,14 +29,14 @@ func foo01() {
 
 func foo02() {
 	x := []int{1, 2, 3}
-	y := x[1:]
-	y[0] = 100
-	fmt.Println(x)
-	fmt.Println(y)
-	y = append(y, 1000)
-	y[0] = 99
-	fmt.Println(x)
-	fmt.Println(y)
+	y := x[1:]          // [2, 3]
+	y[0] = 100          // y = [100, 3]
+	fmt.Println(x)      // [1, 100, 3]
+	fmt.Println(y)      // [100, 3]
+	y = append(y, 1000) // y = [100, 3, 1000]
+	y[0] = 99           // y = [99, 3, 1000]
+	fmt.Println(x)      // [1, 100, 3]
+	fmt.Println(y)      // [99, 3, 1000]
 }
 
 func foo03() {
@@ -44,9 +44,9 @@ func foo03() {
 
 	func(arr [3]int) {
 		arr[0] = 7
-		fmt.Println(arr)
+		fmt.Println(arr) // [7, 2, 3]
 	}(x)
-	fmt.Println(x)
+	fmt.Println(x) // [1, 2, 3]
 }
 
 func foo04() {
@@ -54,17 +54,21 @@ func foo04() {
 
 	func(arr []int) {
 		arr[0] = 7
-		fmt.Println(x)
+		fmt.Println(x) // [7, 2, 3]
 	}(x)
-	fmt.Println(x)
+	fmt.Println(x) // [7, 2, 3]
 }
 
+// vals = []int{1, 2, 3}
 func calc(vals ...int) {
 	foo := 1
 	if len(vals) > 0 {
 		foo = vals[0]
 	}
+
+	bar := append([]int{}, vals...)
 	fmt.Println(foo)
+	fmt.Println(bar)
 	fmt.Println("array count:", len(vals))
 	for index, val := range vals {
 		fmt.Println(index, ":", val)
