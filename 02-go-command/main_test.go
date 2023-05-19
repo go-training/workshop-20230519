@@ -30,3 +30,29 @@ func BenchmarkHello(b *testing.B) {
 		hello()
 	}
 }
+
+func Test_foobar(t *testing.T) {
+	type args struct {
+		name string
+	}
+	tests := []struct {
+		name string
+		args args
+		want string
+	}{
+		{
+			name: "testing for foobar name",
+			args: args{
+				name: "foobar",
+			},
+			want: "Welcome to foobar",
+		},
+	}
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			if got := foobar(tt.args.name); got != tt.want {
+				t.Errorf("foobar() = %v, want %v", got, tt.want)
+			}
+		})
+	}
+}
