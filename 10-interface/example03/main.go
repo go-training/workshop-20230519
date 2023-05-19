@@ -7,7 +7,7 @@ import (
 type ipv4 []byte
 
 // Stringer is implemented by any value that has a String method,
-// which defines the ``native'' format for that value.
+// which defines the “native” format for that value.
 // The String method is used to print values passed as an operand
 // to any format that accepts a string or to an unformatted printer
 // such as Print.

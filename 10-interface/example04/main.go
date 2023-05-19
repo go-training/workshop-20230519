@@ -21,10 +21,10 @@ func (p Person) String() string {
 
 func main() {
 	list := make(List, 4)
-	list[0] = 1       // int
-	list[1] = "hello" // string
-	list[2] = Person{"Jack", 29}
-	list[3] = 1.12
+	list[0] = 1                  // int
+	list[1] = "hello"            // string
+	list[2] = Person{"Jack", 29} // struct
+	list[3] = 1.12               // float64
 
 	for index, element := range list {
 		if value, ok := element.(int); ok {

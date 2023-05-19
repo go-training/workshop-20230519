@@ -5,11 +5,11 @@ import "fmt"
 type StatusType int
 
 const (
-	StatusPrepare StatusType = iota
-	StatusInitial
-	StatusRunning
-	StatusSuccess
-	StatusFailure
+	StatusPrepare StatusType = iota // 0
+	StatusInitial                   // 1
+	StatusRunning                   // 2
+	StatusSuccess                   // 3
+	StatusFailure                   // 4
 )
 
 func main() {
@@ -18,5 +18,5 @@ func main() {
 		StatusRunning,
 		StatusSuccess,
 		StatusFailure,
-	) // 0, 1, 2, 3
+	) // 1, 2, 3, 4
 }
