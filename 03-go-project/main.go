@@ -14,4 +14,5 @@ func Hello() string {
 func main() {
 	fmt.Println(Hello())
 	fmt.Println(random.String(10))
+	fmt.Println(random.StringWithCharset(20, "abcdABCD1234"))
 }
